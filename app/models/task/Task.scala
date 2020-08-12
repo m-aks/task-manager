@@ -1,4 +1,4 @@
-package models
+package models.task
 
 import scalikejdbc._
 
@@ -12,7 +12,7 @@ case class Task( id: Int,
   def destroy()(implicit session: DBSession = Task.autoSession): Unit = Task.destroy(this)(session)
 }
 
-object Task extends SQLSyntaxSupport[Task] {
+object Task extends SQLSyntaxSupport[Task]{// extends Entity[Task] (Task){
 
   override val tableName = "task"
 
@@ -109,8 +109,8 @@ object Task extends SQLSyntaxSupport[Task] {
     withSQL { delete.from(Task).where.eq(column.id, entity.id) }.update().apply()
   }
 
-  def apply(task: SyntaxProvider[Task])(rs: WrappedResultSet):Task =
-    apply(task.resultName)(rs)
+  /*def apply(task: SyntaxProvider[Task])(rs: WrappedResultSet):Task =
+    apply(task.resultName)(rs)*/
 
   def apply(task: ResultName[Task])(rs:WrappedResultSet):Task = {
     Task(

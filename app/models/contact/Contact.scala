@@ -1,5 +1,6 @@
-package models
+package models.contact
 
+import play.api.libs.json.Json
 import scalikejdbc._
 
 case class Contact(id: Int,

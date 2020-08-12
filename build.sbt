@@ -5,12 +5,12 @@ version := "1.0-SNAPSHOT"
 
 lazy val root = (project in file(".")).enablePlugins(PlayScala)
 
-scalaVersion := "2.12.3"
+scalaVersion := "2.13.3"
 
 libraryDependencies += guice
 libraryDependencies += "org.scalatestplus.play" %% "scalatestplus-play"           % "5.0.0" % Test
 
-libraryDependencies += "org.firebirdsql.jdbc"   % "jaybird"                       % "4.0.0.java11"
+libraryDependencies += "org.firebirdsql.jdbc"   %  "jaybird"                      % "4.0.0.java11"
 libraryDependencies += "org.scalikejdbc"        %% "scalikejdbc"                  % "3.5.0"
 libraryDependencies += "org.scalikejdbc"        %% "scalikejdbc-config"           % "3.5.0"
 libraryDependencies += "org.scalikejdbc"        %% "scalikejdbc-play-initializer" % "2.8.0-scalikejdbc-3.5"

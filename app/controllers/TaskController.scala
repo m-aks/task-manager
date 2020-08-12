@@ -2,6 +2,7 @@ package controllers
 
 import javax.inject.Inject
 import models._
+import models.task.{Task, TaskData}
 import play.api.libs.json.Json
 import play.api.mvc._
 

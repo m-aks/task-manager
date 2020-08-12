@@ -1,8 +1,9 @@
-package models
+package models.contact
 
 import play.api.libs.json.Json
 
-case class ContactData( name: String,
+case class ContactData( id:Int,
+                        name: String,
                         number: String){
 
   def create: Contact = Contact.create(name, number)
@@ -17,5 +18,5 @@ object ContactData {
 
   implicit val contactDataWrites = Json.writes[ContactData]
 
-  def fromContact(c: Contact): ContactData = ContactData(c.name, c.number)
+  def fromContact(c: Contact): ContactData = ContactData(c.id,c.name, c.number)
 }

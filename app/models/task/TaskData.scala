@@ -1,8 +1,9 @@
-package models
+package models.task
 
 import play.api.libs.json.Json
 
-case class TaskData(title: String,
+case class TaskData(id:Int,
+                    title: String,
                     description: String,
                     isComplete: Boolean) {
 
@@ -20,5 +21,5 @@ object TaskData {
 
   implicit val taskDataWrites = Json.writes[TaskData]
 
-  def fromTask(e: Task): TaskData = TaskData(e.title, e.description, e.isComplete)
+  def fromTask(e: Task): TaskData = TaskData(e.id, e.title, e.description, e.isComplete)
 }
